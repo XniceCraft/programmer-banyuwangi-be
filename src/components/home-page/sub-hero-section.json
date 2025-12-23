@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_home_page_sub_hero_sections",
+  "info": {
+    "displayName": "Sub Hero Section"
+  },
+  "options": {},
+  "attributes": {
+    "documentations": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::documentation.documentation"
+    }
+  },
+  "config": {}
+}

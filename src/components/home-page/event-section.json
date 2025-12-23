@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_home_page_event_sections",
+  "info": {
+    "displayName": "Event Section"
+  },
+  "options": {},
+  "attributes": {
+    "events": {
+      "type": "component",
+      "component": "home-page-component.event",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

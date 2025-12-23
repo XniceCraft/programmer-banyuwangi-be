@@ -1,0 +1,45 @@
+{
+  "kind": "collectionType",
+  "collectionName": "documentations",
+  "info": {
+    "singularName": "documentation",
+    "pluralName": "documentations",
+    "displayName": "Documentation"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "title",
+      "required": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "date": {
+      "type": "date",
+      "required": true
+    },
+    "photos": {
+      "type": "media",
+      "multiple": true,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "documentation_categories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::documentation-category.documentation-category",
+      "mappedBy": "documentations"
+    }
+  }
+}

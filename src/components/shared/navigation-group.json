@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_shared_navigation_groups",
+  "info": {
+    "displayName": "Navigation Group"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "required": true
+    },
+    "navigations": {
+      "type": "component",
+      "component": "shared.navigation",
+      "repeatable": true,
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_navigation_with_icons",
+  "info": {
+    "displayName": "Navigation With Icon"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "url": {
+      "type": "string",
+      "required": true
+    },
+    "showIcon": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

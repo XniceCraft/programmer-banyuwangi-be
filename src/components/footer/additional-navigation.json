@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_footer_additional_navigations",
+  "info": {
+    "displayName": "Additional Navigation"
+  },
+  "options": {},
+  "attributes": {
+    "primary": {
+      "type": "component",
+      "component": "shared.navigation-with-icon",
+      "repeatable": true,
+      "max": 4
+    },
+    "secondary": {
+      "type": "component",
+      "component": "shared.navigation",
+      "repeatable": true,
+      "max": 4
+    }
+  },
+  "config": {}
+}

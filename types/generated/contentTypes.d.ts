@@ -640,7 +640,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
       Schema.Attribute.Private;
     eventSection: Schema.Attribute.Component<'home-page.event-section', false> &
       Schema.Attribute.Required;
-    heroSection: Schema.Attribute.Component<'home-page.hero-section', false> &
+    heroSection: Schema.Attribute.Component<
+      'home-page.sub-hero-section',
+      false
+    > &
       Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
@@ -649,11 +652,6 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
-    subHeroSection: Schema.Attribute.Component<
-      'home-page.sub-hero-section',
-      false
-    > &
-      Schema.Attribute.Required;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

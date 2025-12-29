@@ -16,9 +16,10 @@ export default factories.createCoreController(
                 .findFirst({
                     status: "published",
                     populate: {
-                        heroSection: true,
-                        subHeroSection: {
+                        heroSection: {
                             populate: {
+                                firstSection: true,
+                                secondSection: true,
                                 documentations: {
                                     populate: {
                                         photos: true,

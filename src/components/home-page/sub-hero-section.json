@@ -1,10 +1,22 @@
 {
   "collectionName": "components_home_page_sub_hero_sections",
   "info": {
-    "displayName": "Sub Hero Section"
+    "displayName": "Hero Section"
   },
   "options": {},
   "attributes": {
+    "firstSection": {
+      "type": "component",
+      "component": "shared.section",
+      "repeatable": false,
+      "required": true
+    },
+    "secondSection": {
+      "type": "component",
+      "component": "shared.section",
+      "repeatable": false,
+      "required": true
+    },
     "documentations": {
       "type": "relation",
       "relation": "oneToMany",

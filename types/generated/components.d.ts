@@ -47,27 +47,20 @@ export interface HomePageEventSection extends Struct.ComponentSchema {
   };
 }
 
-export interface HomePageHeroSection extends Struct.ComponentSchema {
-  collectionName: 'components_home_page_hero_sections';
-  info: {
-    displayName: 'Hero Section';
-  };
-  attributes: {
-    description: Schema.Attribute.String;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
 export interface HomePageSubHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_home_page_sub_hero_sections';
   info: {
-    displayName: 'Sub Hero Section';
+    displayName: 'Hero Section';
   };
   attributes: {
     documentations: Schema.Attribute.Relation<
       'oneToMany',
       'api::documentation.documentation'
     >;
+    firstSection: Schema.Attribute.Component<'shared.section', false> &
+      Schema.Attribute.Required;
+    secondSection: Schema.Attribute.Component<'shared.section', false> &
+      Schema.Attribute.Required;
   };
 }
 
@@ -112,17 +105,28 @@ export interface SharedNavigationWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedSection extends Struct.ComponentSchema {
+  collectionName: 'components_shared_sections';
+  info: {
+    displayName: 'Section';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    title: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'footer.additional-navigation': FooterAdditionalNavigation;
       'home-page-component.event': HomePageComponentEvent;
       'home-page.event-section': HomePageEventSection;
-      'home-page.hero-section': HomePageHeroSection;
       'home-page.sub-hero-section': HomePageSubHeroSection;
       'shared.navigation': SharedNavigation;
       'shared.navigation-group': SharedNavigationGroup;
       'shared.navigation-with-icon': SharedNavigationWithIcon;
+      'shared.section': SharedSection;
     }
   }
 }

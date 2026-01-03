@@ -582,9 +582,9 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    navigationGroups: Schema.Attribute.Component<
+    navigationGrid: Schema.Attribute.Component<
       'shared.navigation-group',
-      true
+      false
     > &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;

@@ -78,16 +78,14 @@ export interface SharedNavigation extends Struct.ComponentSchema {
 export interface SharedNavigationGroup extends Struct.ComponentSchema {
   collectionName: 'components_shared_navigation_groups';
   info: {
-    displayName: 'Navigation Group';
+    displayName: 'Navigation Grid';
   };
   attributes: {
+    columnsCount: Schema.Attribute.Integer &
+      Schema.Attribute.Required &
+      Schema.Attribute.DefaultTo<3>;
     navigations: Schema.Attribute.Component<'shared.navigation', true> &
       Schema.Attribute.Required;
-    title: Schema.Attribute.String &
-      Schema.Attribute.Required &
-      Schema.Attribute.SetMinMaxLength<{
-        maxLength: 255;
-      }>;
   };
 }
 

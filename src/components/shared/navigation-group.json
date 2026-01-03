@@ -1,14 +1,14 @@
 {
   "collectionName": "components_shared_navigation_groups",
   "info": {
-    "displayName": "Navigation Group"
+    "displayName": "Navigation Grid"
   },
   "options": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "maxLength": 255,
-      "required": true
+    "columnsCount": {
+      "type": "integer",
+      "required": true,
+      "default": 3
     },
     "navigations": {
       "type": "component",

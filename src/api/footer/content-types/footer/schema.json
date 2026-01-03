@@ -11,10 +11,10 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "navigationGroups": {
+    "navigationGrid": {
       "type": "component",
       "component": "shared.navigation-group",
-      "repeatable": true,
+      "repeatable": false,
       "required": true
     },
     "additionalNavigation": {

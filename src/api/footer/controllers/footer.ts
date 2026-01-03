@@ -16,7 +16,7 @@ export default factories.createCoreController(
                 .findFirst({
                     status: "published",
                     populate: {
-                        navigationGroups: {
+                        navigationGrid: {
                             populate: {
                                 navigations: true,
                             },

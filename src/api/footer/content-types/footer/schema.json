@@ -11,6 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "copyrightText": {
+      "type": "string",
+      "required": true
+    },
     "navigationGrid": {
       "type": "component",
       "component": "shared.navigation-group",

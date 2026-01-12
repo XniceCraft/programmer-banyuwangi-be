@@ -1,17 +1,22 @@
 {
-  "collectionName": "components_home_page_component_events",
+  "kind": "collectionType",
+  "collectionName": "events",
   "info": {
+    "singularName": "event",
+    "pluralName": "events",
     "displayName": "Event"
   },
-  "options": {},
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
   "attributes": {
     "title": {
       "type": "string",
       "required": true
     },
     "description": {
-      "type": "text",
-      "required": false
+      "type": "text"
     },
     "speaker": {
       "type": "string",
@@ -25,6 +30,5 @@
         "images"
       ]
     }
-  },
-  "config": {}
+  }
 }

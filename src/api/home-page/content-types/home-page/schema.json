@@ -18,10 +18,9 @@
       "required": true
     },
     "eventSection": {
-      "type": "component",
-      "component": "home-page.event-section",
-      "repeatable": false,
-      "required": true
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event.event"
     }
   }
 }

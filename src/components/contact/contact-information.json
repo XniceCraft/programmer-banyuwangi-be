@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_contact_contact_informations",
+  "info": {
+    "displayName": "Contact Information"
+  },
+  "options": {},
+  "attributes": {
+    "information": {
+      "type": "blocks",
+      "required": true
+    },
+    "linkButton": {
+      "type": "component",
+      "component": "shared.link-button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

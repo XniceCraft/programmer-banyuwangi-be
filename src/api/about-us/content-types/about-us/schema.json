@@ -14,14 +14,6 @@
     "content": {
       "type": "blocks",
       "required": true
-    },
-    "documentations": {
-      "type": "media",
-      "multiple": true,
-      "required": false,
-      "allowedTypes": [
-        "images"
-      ]
     }
   }
 }

@@ -32,11 +32,7 @@ export default factories.createCoreController(
                         },
                         eventSection: {
                             populate: {
-                                events: {
-                                    populate: {
-                                        photo: true,
-                                    },
-                                },
+                                photo: true,
                             },
                         },
                         ...(populate as object),

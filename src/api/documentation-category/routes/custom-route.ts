@@ -2,8 +2,8 @@ export default {
     routes: [
         {
             method: "GET",
-            path: "/documentation-category",
-            handler: "documentation-category.find",
+            path: "/documentation-categories/:slug",
+            handler: "documentation-category.findOne",
         },
     ],
 };

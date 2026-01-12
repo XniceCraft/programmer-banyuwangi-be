@@ -5,6 +5,15 @@
   },
   "options": {},
   "attributes": {
+    "title": {
+      "type": "string",
+      "maxLength": 255,
+      "required": true
+    },
+    "backgroundText": {
+      "type": "string",
+      "required": true
+    },
     "firstSection": {
       "type": "component",
       "component": "shared.section",

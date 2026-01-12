@@ -1,5 +1,16 @@
 import type { Schema, Struct } from '@strapi/strapi';
 
+export interface ContactContactInformation extends Struct.ComponentSchema {
+  collectionName: 'components_contact_contact_informations';
+  info: {
+    displayName: 'Contact Information';
+  };
+  attributes: {
+    information: Schema.Attribute.Blocks & Schema.Attribute.Required;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
+  };
+}
+
 export interface FooterAdditionalNavigation extends Struct.ComponentSchema {
   collectionName: 'components_footer_additional_navigations';
   info: {
@@ -23,36 +34,13 @@ export interface FooterAdditionalNavigation extends Struct.ComponentSchema {
   };
 }
 
-export interface HomePageComponentEvent extends Struct.ComponentSchema {
-  collectionName: 'components_home_page_component_events';
-  info: {
-    displayName: 'Event';
-  };
-  attributes: {
-    description: Schema.Attribute.Text;
-    photo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
-    speaker: Schema.Attribute.String & Schema.Attribute.Required;
-    title: Schema.Attribute.String & Schema.Attribute.Required;
-  };
-}
-
-export interface HomePageEventSection extends Struct.ComponentSchema {
-  collectionName: 'components_home_page_event_sections';
-  info: {
-    displayName: 'Event Section';
-  };
-  attributes: {
-    events: Schema.Attribute.Component<'home-page-component.event', true> &
-      Schema.Attribute.Required;
-  };
-}
-
 export interface HomePageSubHeroSection extends Struct.ComponentSchema {
   collectionName: 'components_home_page_sub_hero_sections';
   info: {
     displayName: 'Hero Section';
   };
   attributes: {
+    backgroundText: Schema.Attribute.String & Schema.Attribute.Required;
     documentations: Schema.Attribute.Relation<
       'oneToMany',
       'api::documentation.documentation'
@@ -61,6 +49,23 @@ export interface HomePageSubHeroSection extends Struct.ComponentSchema {
       Schema.Attribute.Required;
     secondSection: Schema.Attribute.Component<'shared.section', false> &
       Schema.Attribute.Required;
+    title: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.SetMinMaxLength<{
+        maxLength: 255;
+      }>;
+  };
+}
+
+export interface SharedLinkButton extends Struct.ComponentSchema {
+  collectionName: 'components_shared_link_buttons';
+  info: {
+    displayName: 'Link Button';
+  };
+  attributes: {
+    description: Schema.Attribute.Text;
+    label: Schema.Attribute.String & Schema.Attribute.Required;
+    url: Schema.Attribute.String & Schema.Attribute.Required;
   };
 }
 
@@ -117,10 +122,10 @@ export interface SharedSection extends Struct.ComponentSchema {
 declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
+      'contact.contact-information': ContactContactInformation;
       'footer.additional-navigation': FooterAdditionalNavigation;
-      'home-page-component.event': HomePageComponentEvent;
-      'home-page.event-section': HomePageEventSection;
       'home-page.sub-hero-section': HomePageSubHeroSection;
+      'shared.link-button': SharedLinkButton;
       'shared.navigation': SharedNavigation;
       'shared.navigation-group': SharedNavigationGroup;
       'shared.navigation-with-icon': SharedNavigationWithIcon;

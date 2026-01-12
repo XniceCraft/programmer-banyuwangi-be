@@ -1,31 +1,24 @@
 /**
- * footer controller
+ * contact controller
  */
 
 import { factories } from "@strapi/strapi";
 
 export default factories.createCoreController(
-    "api::footer.footer",
+    "api::contact.contact",
     ({ strapi }) => ({
         async find(ctx) {
             await this.validateQuery(ctx);
 
             const { populate, ...query } = await this.sanitizeQuery(ctx);
             const entity = await strapi
-                .documents("api::footer.footer")
+                .documents("api::contact.contact")
                 .findFirst({
                     status: "published",
                     populate: {
-                        logo: true,
-                        navigationGrid: {
+                        informations: {
                             populate: {
-                                navigations: true,
-                            },
-                        },
-                        additionalNavigation: {
-                            populate: {
-                                primary: true,
-                                secondary: true,
+                                linkButton: true,
                             },
                         },
                         ...(populate as object),

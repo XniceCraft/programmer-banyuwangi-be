@@ -11,17 +11,18 @@
   },
   "pluginOptions": {},
   "attributes": {
-    "logo": {
-      "type": "media",
-      "multiple": false,
-      "required": true,
-      "allowedTypes": [
-        "images"
-      ]
+    "backgroundText": {
+      "type": "string"
     },
     "copyrightText": {
       "type": "string",
       "required": true
+    },
+    "runningText": {
+      "type": "component",
+      "component": "shared.running-text",
+      "repeatable": false,
+      "required": false
     },
     "navigationGrid": {
       "type": "component",

@@ -16,6 +16,7 @@ export default factories.createCoreController(
                 .findFirst({
                     status: "published",
                     populate: {
+                        runningText: true,
                         logo: true,
                         navigationGrid: {
                             populate: {
@@ -36,5 +37,5 @@ export default factories.createCoreController(
             const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
             return await this.transformResponse(sanitizedEntity);
         },
-    })
+    }),
 );

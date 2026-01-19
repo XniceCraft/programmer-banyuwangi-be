@@ -16,6 +16,9 @@ export default factories.createCoreController(
                 .findFirst({
                     status: "published",
                     populate: {
+                        upcomingEventSection: {
+                            populate: { poster: true },
+                        },
                         heroSection: {
                             populate: {
                                 firstSection: true,
@@ -43,5 +46,5 @@ export default factories.createCoreController(
             const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
             return await this.transformResponse(sanitizedEntity);
         },
-    })
+    }),
 );

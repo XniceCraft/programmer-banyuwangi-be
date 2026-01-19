@@ -637,6 +637,7 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'footer.additional-navigation',
       false
     >;
+    backgroundText: Schema.Attribute.String;
     copyrightText: Schema.Attribute.String & Schema.Attribute.Required;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
@@ -647,13 +648,13 @@ export interface ApiFooterFooter extends Struct.SingleTypeSchema {
       'api::footer.footer'
     > &
       Schema.Attribute.Private;
-    logo: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
     navigationGrid: Schema.Attribute.Component<
       'shared.navigation-group',
       false
     > &
       Schema.Attribute.Required;
     publishedAt: Schema.Attribute.DateTime;
+    runningText: Schema.Attribute.Component<'shared.running-text', false>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -717,6 +718,10 @@ export interface ApiHomePageHomePage extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    upcomingEventSection: Schema.Attribute.Component<
+      'home-page.upcoming-event-section',
+      false
+    >;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;

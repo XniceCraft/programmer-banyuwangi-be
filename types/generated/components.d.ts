@@ -57,6 +57,18 @@ export interface HomePageSubHeroSection extends Struct.ComponentSchema {
   };
 }
 
+export interface HomePageUpcomingEventSection extends Struct.ComponentSchema {
+  collectionName: 'components_home_page_upcoming_event_sections';
+  info: {
+    displayName: 'Upcoming Event Section';
+  };
+  attributes: {
+    description: Schema.Attribute.String;
+    heading: Schema.Attribute.String & Schema.Attribute.Required;
+    poster: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedLinkButton extends Struct.ComponentSchema {
   collectionName: 'components_shared_link_buttons';
   info: {
@@ -108,6 +120,17 @@ export interface SharedNavigationWithIcon extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedRunningText extends Struct.ComponentSchema {
+  collectionName: 'components_shared_running_texts';
+  info: {
+    displayName: 'Running Text';
+  };
+  attributes: {
+    outlinedText: Schema.Attribute.String;
+    text: Schema.Attribute.String & Schema.Attribute.Required;
+  };
+}
+
 export interface SharedSection extends Struct.ComponentSchema {
   collectionName: 'components_shared_sections';
   info: {
@@ -125,10 +148,12 @@ declare module '@strapi/strapi' {
       'contact.contact-information': ContactContactInformation;
       'footer.additional-navigation': FooterAdditionalNavigation;
       'home-page.sub-hero-section': HomePageSubHeroSection;
+      'home-page.upcoming-event-section': HomePageUpcomingEventSection;
       'shared.link-button': SharedLinkButton;
       'shared.navigation': SharedNavigation;
       'shared.navigation-group': SharedNavigationGroup;
       'shared.navigation-with-icon': SharedNavigationWithIcon;
+      'shared.running-text': SharedRunningText;
       'shared.section': SharedSection;
     }
   }

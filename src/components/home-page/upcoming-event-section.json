@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_home_page_upcoming_event_sections",
+  "info": {
+    "displayName": "Upcoming Event Section"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string",
+      "required": true
+    },
+    "description": {
+      "type": "string"
+    },
+    "poster": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    }
+  },
+  "config": {}
+}

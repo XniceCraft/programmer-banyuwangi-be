@@ -17,7 +17,6 @@ export default factories.createCoreController(
                     status: "published",
                     populate: {
                         runningText: true,
-                        logo: true,
                         navigationGrid: {
                             populate: {
                                 navigations: true,

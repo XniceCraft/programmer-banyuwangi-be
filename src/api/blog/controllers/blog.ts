@@ -3,6 +3,7 @@
  */
 
 import { factories } from "@strapi/strapi";
+import { getPaginationParams } from "../../../pagination";
 
 export default factories.createCoreController(
     "api::blog.blog",
@@ -10,9 +11,8 @@ export default factories.createCoreController(
         async findOne(ctx) {
             await this.validateQuery(ctx);
 
-            const { populate, pagination, ...query } = await this.sanitizeQuery(
-                ctx
-            );
+            const { populate, pagination, ...query } =
+                await this.sanitizeQuery(ctx);
             const entity = await strapi.documents("api::blog.blog").findFirst({
                 status: "published",
                 filters: {
@@ -24,12 +24,12 @@ export default factories.createCoreController(
                     cover: true,
                     ...(populate as object),
                 },
-                ...(pagination as object),
+                ...getPaginationParams(ctx),
                 ...query,
             });
 
             const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
             return await this.transformResponse(sanitizedEntity);
         },
-    })
+    }),
 );

@@ -11,9 +11,8 @@ export default factories.createCoreController(
         async find(ctx) {
             await this.validateQuery(ctx);
 
-            const { populate, pagination, ...query } = await this.sanitizeQuery(
-                ctx
-            );
+            const { populate, pagination, ...query } =
+                await this.sanitizeQuery(ctx);
             const entity = await strapi
                 .documents("api::documentation-category.documentation-category")
                 .findMany({
@@ -24,14 +23,6 @@ export default factories.createCoreController(
                         },
                         ...(populate as object),
                     },
-                    ...(pagination
-                        ? {
-                              ...(pagination as object),
-                              page: parseInt((pagination as any).page) || 1,
-                              pageSize:
-                                  parseInt((pagination as any).page) || 25,
-                          }
-                        : {}),
                     ...query,
                     ...getPaginationParams(ctx),
                 });
@@ -40,7 +31,7 @@ export default factories.createCoreController(
             return await this.transformResponse(sanitizedEntity, {
                 pagination: await paginationGenerator(
                     "api::documentation-category.documentation-category",
-                    ctx
+                    ctx,
                 ),
             });
         },
@@ -68,5 +59,5 @@ export default factories.createCoreController(
             const sanitizedEntity = await this.sanitizeOutput(entity, ctx);
             return await this.transformResponse(sanitizedEntity);
         },
-    })
+    }),
 );

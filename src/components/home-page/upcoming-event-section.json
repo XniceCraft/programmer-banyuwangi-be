@@ -19,6 +19,12 @@
       "allowedTypes": [
         "images"
       ]
+    },
+    "linkButton": {
+      "type": "component",
+      "component": "shared.link-button",
+      "repeatable": false,
+      "required": false
     }
   },
   "config": {}

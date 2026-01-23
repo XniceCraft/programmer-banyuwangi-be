@@ -65,6 +65,7 @@ export interface HomePageUpcomingEventSection extends Struct.ComponentSchema {
   attributes: {
     description: Schema.Attribute.String;
     heading: Schema.Attribute.String & Schema.Attribute.Required;
+    linkButton: Schema.Attribute.Component<'shared.link-button', false>;
     poster: Schema.Attribute.Media<'images'> & Schema.Attribute.Required;
   };
 }

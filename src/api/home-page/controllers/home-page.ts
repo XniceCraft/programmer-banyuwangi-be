@@ -17,7 +17,7 @@ export default factories.createCoreController(
                     status: "published",
                     populate: {
                         upcomingEventSection: {
-                            populate: { poster: true },
+                            populate: { poster: true, linkButton: true },
                         },
                         heroSection: {
                             populate: {
